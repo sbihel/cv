@@ -1,0 +1,115 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage[usenames, dvipsnames]{color}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux 
+Libertine O}
+\setmonofont[Scale=0.8]{Monaco}
+
+% ---- CUSTOM COMMANDS
+\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[bookmarks, colorlinks, breaklinks, 
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={Simon Bihel - vita},
+	pdfauthor={Simon Bihel},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+
+\pagenumbering{gobble}
+% DOCUMENT
+\begin{document}
+
+{\LARGE Simon Bihel}\\[1cm]
+ \\	
+\texttt{3} impasse Sainte Julitte\\
+lotissement le Clos Saint Cyr\\
+\texttt{14400} Vaucelles, Calvados,
+France\\[.2cm]
+Phone: \texttt{(+33)6 84 57 38 21}\\[.2cm]
+Mail: \href{mailto:simon.bihel@ens-rennes.fr}{simon.bihel@ens-rennes.fr}\\ 
+Website: \href{http://simonbihel.me}{simonbihel.me}\\
+\vfill
+ Born on the:  December 5, 1995---Bayeux, France\\
+Nationality:  French
+
+\hrule
+\section*{Experience}
+\noindent
+\years{2017}\textsc{Summer Internship}, \textit{Automated Test Data Generation for Dynamically Typed Programming Languages} with Shin Yoo, COINSE Lab, KAIST\\
+\years{2016}\textsc{Summer Internship}, \textit{Specifying The Experimental Scenarios For Simulated Cloud Studies} with Martin Quinson \& Anne-Cécile Orgerie, IRISA \& Inria Rennes
+\section*{Education}
+\noindent
+\years{2015\textasciitilde\ 2018}\textsc{Magistère Informatique}
+(\textasciitilde\ Master in Computer Science), ENS Rennes \& Rennes 1
+University\\
+\years{2014\textasciitilde\ 2015}\textsc{1st \& 2nd year Computer Science Bachelor}, highest honors, valedictorian, Caen University\\
+\years{2013}\textsc{Science High school diploma}, Computer Science specialty, with high honors
+
+
+\section*{Certifications}
+\years{2014}\textsc{Driving licence} (permis B)\\
+% \years{2015}\textsc{C2I Niveau 1}, Caen University\\
+% \years{2015}\textsc{MOOC Logique Informatique}, F.U.N. (ENS Cachan)
+
+\section*{Computer skills}
+Here are some of my skills, note that I don't have a professional level in either of them.
+
+Python; \LaTeX{}; C\@; Scala; C++; Go; Haskell.
+
+\section*{Foreign languages skills}
+\textsc{French}, native speaker;\hfill
+\textsc{English}, fluent;\hfill
+\textsc{Korean}, elementary proficiency
+
+\section*{Courses projects}
+During the second year of Bachelor, I did a project based on the \textit{Faster Than Light} game. It consisted of building an automated fights simulator and then using it to build the most powerful ships.
+
+During the first year of Master, I worked on a project for evaluating a \textit{Processing-in-Memory} architecture using the \textit{k-means} algorithm.
+
+
+\end{document}
