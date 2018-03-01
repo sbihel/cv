@@ -1,115 +1,167 @@
-%------------------------------------
-% Dario Taraborelli
-% Typesetting your academic CV in LaTeX
-%
-% URL: http://nitens.org/taraborelli/cvtex
-% DISCLAIMER: This template is provided for free and without any guarantee 
-% that it will correctly compile on your system if you have a non-standard  
-% configuration.
-% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
-%------------------------------------
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
 
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
+\documentclass[letterpaper,11pt]{article}
 
-\documentclass[10pt, a4paper]{article}
-\usepackage{fontspec} 
+\usepackage{fontspec}
+\usepackage{inconsolata}
+\usepackage{XCharter}
+\setmonofont{Inconsolata}
 
-% DOCUMENT LAYOUT
-\usepackage{geometry} 
-\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
-\setlength\parindent{0in}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[inline]{enumitem}
+\usepackage{hyperref}
+\urlstyle{same}
+\usepackage{fancyhdr}
 
-% FONTS
-\usepackage[usenames, dvipsnames]{color}
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{xltxtra}
-\defaultfontfeatures{Mapping=tex-text}
-\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux 
-Libertine O}
-\setmonofont[Scale=0.8]{Monaco}
 
-% ---- CUSTOM COMMANDS
-\chardef\&="E050
-\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
-\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
-\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
-% ---- MARGIN YEARS
-\usepackage{marginnote}
-\newcommand{\amper{}}{\chardef\amper="E0BD }
-\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
-\renewcommand*{\raggedleftmarginnote}{}
-\setlength{\marginparsep}{7pt}
-\reversemarginpar
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-% HEADINGS
-\usepackage{sectsty} 
-\usepackage[normalem]{ulem} 
-\sectionfont{\mdseries\upshape\Large}
-\subsectionfont{\mdseries\scshape\normalsize} 
-\subsubsectionfont{\mdseries\upshape\large} 
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-% PDF SETUP
-% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
-\usepackage[bookmarks, colorlinks, breaklinks, 
-% ---- FILL IN HERE THE TITLE AND AUTHOR
-	pdftitle={Simon Bihel - vita},
-	pdfauthor={Simon Bihel},
-	pdfproducer={http://nitens.org/taraborelli/cvtex}
-]{hyperref}  
-\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+\raggedbottom{}
+\raggedright{}
+\setlength{\tabcolsep}{0in}
 
-\pagenumbering{gobble}
-% DOCUMENT
+% Sections formatting
+\titleformat{\section}{%
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule{}\vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\basicItem}[2]{%
+  \item\small{%
+    \textbf{#1}{\ifx&#2&\else: #2\vspace{-2pt}\fi}
+  }
+}
+
+\newcommand{\headingItem}[4]{%
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\headingSubItem}[2]{\basicItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+
 \begin{document}
 
-{\LARGE Simon Bihel}\\[1cm]
- \\	
-\texttt{3} impasse Sainte Julitte\\
-lotissement le Clos Saint Cyr\\
-\texttt{14400} Vaucelles, Calvados,
-France\\[.2cm]
-Phone: \texttt{(+33)6 84 57 38 21}\\[.2cm]
-Mail: \href{mailto:simon.bihel@ens-rennes.fr}{simon.bihel@ens-rennes.fr}\\ 
-Website: \href{http://simonbihel.me}{simonbihel.me}\\
-\vfill
- Born on the:  December 5, 1995---Bayeux, France\\
-Nationality:  French
-
-\hrule
-\section*{Experience}
-\noindent
-\years{2017}\textsc{Summer Internship}, \textit{Automated Test Data Generation for Dynamically Typed Programming Languages} with Shin Yoo, COINSE Lab, KAIST\\
-\years{2016}\textsc{Summer Internship}, \textit{Specifying The Experimental Scenarios For Simulated Cloud Studies} with Martin Quinson \& Anne-Cécile Orgerie, IRISA \& Inria Rennes
-\section*{Education}
-\noindent
-\years{2015\textasciitilde\ 2018}\textsc{Magistère Informatique}
-(\textasciitilde\ Master in Computer Science), ENS Rennes \& Rennes 1
-University\\
-\years{2014\textasciitilde\ 2015}\textsc{1st \& 2nd year Computer Science Bachelor}, highest honors, valedictorian, Caen University\\
-\years{2013}\textsc{Science High school diploma}, Computer Science specialty, with high honors
+% -----------------------------------------------------------------------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Simon Bihel} & \href{mailto:simon.bihel@ens-rennes.fr}{\texttt{simon.bihel@ens-rennes.fr}}\\
+  \href{https://simonbihel.me}{\texttt{simonbihel.me}} & +33.6.84.57.38.21 \\
+\end{tabular*}
 
 
-\section*{Certifications}
-\years{2014}\textsc{Driving licence} (permis B)\\
-% \years{2015}\textsc{C2I Niveau 1}, Caen University\\
-% \years{2015}\textsc{MOOC Logique Informatique}, F.U.N. (ENS Cachan)
+% -----------------------------------------------------------------------------
+\section{Education}
+\begin{itemize}[leftmargin=*]
+  \headingItem{University of Rennes 1 \& ENS Rennes}{Rennes, France}%
+    {M.Sc.\ 2 in Computer Science, research track}{2017 -- 2018}
+  \headingItem{University of Rennes 1 \& ENS Rennes}{Rennes, France}%
+    {M.Sc.\ 1 in Computer Science, research track [74 ECTS, GPA: 12.94/20, Rank: 15/18]}{2016 -- 2017}
+  \headingItem{\'Ecole Normale Sup\'erieure of Rennes}{Rennes, France}%
+    {Magist\`ere in Computer Science, research training (lectures, reading sessions, lab visits, group projects)}{2015 -- 2018}
+  \headingItem{University of Rennes 1 \& ENS Rennes}{Rennes, France}%
+    {B.Sc.\ in Computer Science, research track [66 ECTS, GPA: 10.956/20, Rank: 17/20]}{2015 -- 2016}
+  \headingItem{University of Caen}{Caen, France}%
+    {B.Sc.\ in Computer Science [120 ECTS, GPA: 17.79/20, Rank: 1/157]}{2013 -- 2015}
+\end{itemize}
 
-\section*{Computer skills}
-Here are some of my skills, note that I don't have a professional level in either of them.
 
-Python; \LaTeX{}; C\@; Scala; C++; Go; Haskell.
+% -----------------------------------------------------------------------------
+\section{Experience}
+\begin{itemize}[leftmargin=*]
+  \headingItem{KTH}{Stockholm, Sweden}{Intern}{February 2018 - June 2018}
+    \begin{itemize}
+      \basicItem{Adaptation of Amplified Unit Tests for Human Comprehension}{Rendering generated tests by DSpot in a human-friendly way.}
+      \basicItem{Supervisor}{Benoit Baudry \& Martin Monperrus (SCS \& TCS Departements)}
+    \end{itemize}\vspace{-5pt}
 
-\section*{Foreign languages skills}
-\textsc{French}, native speaker;\hfill
-\textsc{English}, fluent;\hfill
-\textsc{Korean}, elementary proficiency
+  \headingItem{KAIST}{Daejeon, South-Korea}{Intern}{March 2017 - August 2017}
+    \begin{itemize}
+      \basicItem{Automated Test Data Generation for Dynamically Typed Programming Languages}{Survey on Test Data Generation from scratch for dynamic language such as Python.}
+      \basicItem{Supervisor}{Shin Yoo (COINSE Lab)}
+    \end{itemize}\vspace{-5pt}
 
-\section*{Courses projects}
-During the second year of Bachelor, I did a project based on the \textit{Faster Than Light} game. It consisted of building an automated fights simulator and then using it to build the most powerful ships.
+    \headingItem{University of Rennes 1 \& IRISA}{Rennes, France}{Student}{September 2016 - April 2017}
+    \begin{itemize}
+      \basicItem{Group project}{Evaluating UPMEM, a \textit{Processing-in-Memory} architecture, using the \textit{k-means} algorithm.}
+      \basicItem{Supervisor}{Dominique Lavenier (GenScale research group)}
+    \end{itemize}\vspace{-5pt}
 
-During the first year of Master, I worked on a project for evaluating a \textit{Processing-in-Memory} architecture using the \textit{k-means} algorithm.
+  \headingItem{IRISA \& INRIA}{Rennes, France}{Intern}{May 2016 - July 2016}
+    \begin{itemize}
+      \basicItem{Specifying the Experimental Scenarios for Simulated Cloud Studies}{Designing an API for SimGrid, a distributed system simulator, targeting researcher's needs for cloud simulations.}
+      \basicItem{Supervisors}{Martin Quinson \& Anne-C\'ecile Orgerie (Myriads research group)}
+    \end{itemize}\vspace{-5pt}
+\end{itemize}
+
+
+% -----------------------------------------------------------------------------
+% \section{Projects}
+% \begin{itemize}[leftmargin=*]
+%     \headingSubItem{UPMEM}{During the first year of Master, I worked on evaluating a \textit{Processing-in-Memory} architecture using the \textit{k-means} algorithm.}
+% \end{itemize}
+
+
+% -----------------------------------------------------------------------------
+\section{Spoken Languages}
+% \begin{itemize*}[leftmargin=*]
+%   \basicItem{~French}{Mother tongue}
+%   ~~~~~~~~~~
+%   \basicItem{~English}{Fluent}
+% \end{itemize*}
+\begin{itemize}[leftmargin=*]
+  \headingSubItem{French}{Mother tongue}
+  \headingSubItem{English}{Fluent (TOEIC 990)}
+  \headingSubItem{Korean}{Basic user}
+\end{itemize}
+
+
+% -----------------------------------------------------------------------------
+\section{Computer Skills}
+% \begin{itemize*}[leftmargin=*,itemjoin=\hfill]
+%   \basicItem{~Languages}{Scala, Python, Javascript, C++, SQL, Java}
+%   \basicItem{~Technologies}{Scala, Python, Javascript, C++, SQL, Java}
+% \end{itemize*}
+\begin{itemize}[leftmargin=*]
+  \headingSubItem{Languages}{Python, C, C++, Java, Coq, Vimscript, \LaTeX, OCaml, Haskell, Scala, SQL, Go}
+  \headingSubItem{Libraries}{Clang AST, ast.py, Spoon, Pitest, CUDA, MPI, OpenMP, NumPy, Hadoop}
+  \headingSubItem{VCS}{Git, Subversion}
+  \headingSubItem{Automation}{Make, Maven}
+  \headingSubItem{Testing}{Jacoco, Junit}
+  \headingSubItem{Platforms}{macOS, Linux}
+\end{itemize}
+
+
+% -----------------------------------------------------------------------------
+\section{Certifications}
+\begin{itemize}[leftmargin=*]
+  \headingSubItem{Driving Licence}{}
+\end{itemize}
 
 
 \end{document}
