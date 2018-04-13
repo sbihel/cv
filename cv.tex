@@ -52,7 +52,7 @@
 % Custom commands
 \newcommand{\basicItem}[2]{%
   \item\small{%
-    \textbf{#1}{\ifx&#2&\else: #2\vspace{-2pt}\fi}
+    \textbf{#1}{\ifx&#2&\else\ifx&#1&\else: \fi#2\vspace{-2pt}\fi}
   }
 }
 
@@ -114,6 +114,7 @@
     \begin{itemize}
       \basicItem{Group project}{Evaluating UPMEM, a \textit{Processing-in-Memory} architecture, using the \textit{k-means} algorithm.}
       \basicItem{Supervisor}{Dominique Lavenier (GenScale research group)}
+      \basicItem{}{Presented at HiPEAC'17 Student Heterogeneous Programming Challenge.}
     \end{itemize}\vspace{-5pt}
 
   \headingItem{IRISA \& INRIA}{Rennes, France}{Intern}{May 2016--July 2016}
