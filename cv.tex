@@ -23,6 +23,8 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 
+\hypersetup{pdfauthor={Simon Bihel},
+            pdftitle={Simon Bihel - Curriculum Vitae}}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -75,7 +77,7 @@
 % -----------------------------------------------------------------------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\Large Simon Bihel} & \href{mailto:simon@simonbihel.me}{\texttt{simon@simonbihel.me}}\\
-  \href{https://simonbihel.me}{\texttt{simonbihel.me}} & +33.6.84.57.38.21 \\
+  \href{https://simonbihel.me}{\texttt{simonbihel.me}} & +44 7484 121815 \\
 \end{tabular*}
 
 
@@ -100,7 +102,11 @@
 \begin{itemize}[leftmargin=*]
   \headingItem{Nexmo}{London, United-Kingdom}{Junior Software Developer in Test}{November 2018--Present}
     \begin{itemize}
-      \basicItem{Voice API}{}
+      \basicItem{Voice API}{Worked mainly on the customer-facing service to control calls and conferences.}
+      \basicItem{}{Testing: Maintenance of the test suite (e.g.\ abstraction and generation of tests, parallelisation).}
+      \basicItem{}{Monitoring: Facilitate incident impact measurement, track API usage, alerting.}
+      \basicItem{}{Investigations: Understanding test failures or abnormal behaviours across the services.}
+      % \basicItem{}{CD: }
     \end{itemize}\vspace{-5pt}
 
   \headingItem{KTH}{Stockholm, Sweden}{Research Intern}{February 2018--June 2018}
@@ -137,25 +143,26 @@
 
 
 % -----------------------------------------------------------------------------
-\section{Computer Skills}
+\section{Skills}
 \begin{itemize}[leftmargin=*]
-  \headingSubItem{Languages}{Python, C, C++, Java, Coq, Vimscript, OCaml, Haskell, Scala, SQL, Go}
-  \headingSubItem{Libraries}{Clang AST, ast.py, CPython, Spoon, Pitest, WALA slicing, CUDA, MPI, OpenMP, ANTLR3, Xtext, Flex/Bison, NumPy, Hadoop}
+  \headingSubItem{Languages}{Python, C, C++, Java, Coq, Vimscript, OCaml, Haskell, Scala, SQL, Go, Rust}
+  \headingSubItem{Libraries}{Clang AST, ast.py, CPython, Spoon, WALA slicing, CUDA, MPI, OpenMP, ANTLR3, Xtext, Flex/Bison, NumPy, Hadoop}
+  \headingSubItem{Testing}{Pytest, \_Unit, Jacoco, unittest.mock, Pitest}
+  \headingSubItem{Automation}{Docker, Puppet, Nomad, Make}
+  \headingSubItem{Continuous Integration}{Jenkins, SonarCloud}
+  \headingSubItem{Monitoring}{Grafana, Prometheus, ELK Stack}
   \headingSubItem{VCS}{Git, Subversion}
-  \headingSubItem{Automation}{Make, Maven, SBT}
-  \headingSubItem{Testing}{\_Unit, Jacoco, unittest.mock}
-  \headingSubItem{Continuous Integration}{Travis, Coveralls, SonarQube}
   \headingSubItem{Platforms}{macOS, Linux}
   \headingSubItem{Office}{\LaTeX, LibreOffice}
 \end{itemize}
 
 
 % -----------------------------------------------------------------------------
-\section{Spoken Languages}
+\section{Languages}
 \begin{itemize}[leftmargin=*]
   \headingSubItem{French}{Mother tongue}
   \headingSubItem{English}{Fluent (TOEIC L\&R\@: 990 [March 14, 2017], IELTS\@: 8 R9L9W7S7 [June 1, 2018])}
-  \headingSubItem{Korean}{Basic user}
+  % \headingSubItem{Korean}{Basic user}
 \end{itemize}
 
 
