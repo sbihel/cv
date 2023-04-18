@@ -1,5 +1,5 @@
 #let cv(author: "", website: "", email: "", github: "", body) = {
-  set document(author: author, title: "#author - Resume")
+  set document(author: author, title: author + " - Resume")
   set text(font: "Linux Libertine", lang: "en", size: 10pt)
   set page(
     footer: [
