@@ -76,9 +76,9 @@
 )
 
 = Skills
-/ Rust: One of my main interests, I have four years of experience working with it in different contexts, from libraries and web services to bindings in various languages.
-/ Infrastructure: One of my main responsibilities, I have experience working on internal infrastructure as well as working in customers' environments.
-/ Digital Identity: I have been working in this domain for four years, ranging from working and implementing standards to designing solutions.
+/ Rust: Four years of professional experience, including developing libraries, web services, and language bindings.
+/ Infrastructure: Experience working on internal infrastructure as well as working in customers' environments.
+/ Digital Identity: Four years of experience, including implementing standards and designing solutions.
 
 = Experience
 #exp(
@@ -98,14 +98,14 @@
     title: "Software Engineer",
     time: "September 2020 – April 2022",
     details: [
-      - Joined as the second employee and worked on most projects over the years.
-      - Development: worked on most libraries and services. Mostly in Rust but generated bindings for other languages. Also worked on web and mobile apps.
-      - Standards: participated in the implementation of new standards (e.g. Verifiable Credentials, OID4VC, ISO mDL, Sign-In with Ethereum).
-      - Infrastructure: single person responsible for it, I provided direction and did most of the implementation.
+      - Joined as the second employee and worked on most projects over the years (e.g. California DMV mobile driver's licenses, Utah digital credentials).
+      - Development: worked on most libraries and services; mostly in Rust but also generated bindings for other languages, and worked on web and mobile apps.
+      - Standards: participated in the implementation of new standards (e.g. W3C Verifiable Credentials, OID4VC, ISO mDL, Sign-In with Ethereum).
+      - Infrastructure: single person responsible for it, provided direction and did most of the implementation.
       - DevOps: managed services deployments, CI/CD pipelines, and monitoring.
       - Architecture: contributed to infrastructure and software architecture discussions.
       - Compliance: worked on the infrastructure side of SOC2.
-      - Management: up to 7 direct reports at a time, I was also part of the leadership team.
+      - Management: up to 7 direct reports at a time, was also part of the leadership team.
     ]
   )
 )
