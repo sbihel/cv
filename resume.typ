@@ -1,6 +1,6 @@
 #let cv(author: "", website: "", email: "", github: "", body) = {
   set document(author: author, title: author + " - Resume")
-  set text(font: "Linux Libertine", lang: "en", size: 10pt)
+  set text(font: "Libertinus Serif", lang: "en", size: 10pt)
   set page(
     footer: [
       #set align(right)
@@ -75,22 +75,22 @@
   github: [#link("https://github.com/sbihel")[github.com/sbihel]],
 )
 
-= Skills
+= Expertise
 / Rust: Four years of professional experience, including developing libraries, web services, and language bindings.
 / Infrastructure: Experience working on internal infrastructure as well as working in customers' environments.
 / Digital Identity: Four years of experience, including implementing standards and designing solutions.
 
 = Experience
 #exp(
-  "SpruceID",
-  "(Remote) London, United-Kingdom",
+  [#link("https://spruceid.com")[SpruceID]],
+  "(Remote) London, United Kingdom",
   (
-    title: "Principal Software Engineer, Head of Infrastructure",
+    title: "Principal Software Engineer",
     time: "March 2023 – Present",
     details: []
   ),
   (
-    title: "Senior Software Engineer, Infrastructure Lead",
+    title: "Senior Software Engineer",
     time: "April 2022 – March 2023",
     details: []
   ),
@@ -98,57 +98,29 @@
     title: "Software Engineer",
     time: "September 2020 – April 2022",
     details: [
-      - Joined as the second employee and worked on most projects over the years (e.g. California DMV mobile driver's licenses, Utah digital credentials).
+      - Joined as the second employee and worked on most projects over the years.
+      - Projects highlights:
+         - #link("https://spruceid.com/customer-highlight/california-highlight")[California DMV mobile driver's licenses]: co-led a cross-functional team to implement end-to-end mDL issuance and presentment, with successful production deployment after 6 months.
+         - #link("https://login.xyz/")[Sign-in with Ethereum]: wrote an OIDC IdP, as well as writing libraries in Rust, JS, Python, Golang, etc.
+         - Standards implementations: wrote open-source libraries for W3C Verifiable Credential, OID4VC, ISO mDL, as well as tooling such as CLIs and HTTP services, with hundreds of GitHub stars combined.
       - Development: worked on most libraries and services; mostly in Rust but also generated bindings for other languages, and worked on web and mobile apps.
-      - Standards: participated in the implementation of new standards (e.g. W3C Verifiable Credentials, OID4VC, ISO mDL, Sign-In with Ethereum).
-      - Infrastructure: single person responsible for it, provided direction and did most of the implementation.
-      - DevOps: managed services deployments, CI/CD pipelines, and monitoring.
-      - Architecture: contributed to infrastructure and software architecture discussions.
-      - Compliance: worked on the infrastructure side of SOC2.
-      - Management: up to 7 direct reports at a time, was also part of the leadership team.
+      - Infrastructure: designed and implemented the entire infrastructure stack, from provisioning to CI/CD and monitoring, achieving 99.99% uptime and SOC2 compliance.
+      - Management: up to 7 direct reports, provided engineering guidance, translated ambiguous requests from internal stakeholders and customers into action items, interfaced with customers, helped with the product direction, and was part of the leadership team.
     ]
   )
 )
 #exp(
-  "Nexmo (Vonage)",
-  "London, United-Kingdom",
+  [#link("https://www.vonage.co.uk/communications-apis/")[Nexmo (Vonage)]],
+  "London, United Kingdom",
   (
     title: "Software Development Engineer in Test",
     time: "November 2018 – October 2020",
     details: [
-      - Testing: maintenance of the test suite (e.g. abstraction and generation of tests, parallelisation).
-      - Monitoring: facilitate incident impact measurement, track API usage, alerting (pushed for on-call).
-      - Investigations: understanding test failures or abnormal behaviours across the services.
+      - Testing: maintenance and optimisation of the test suite, debugging across the whole stack.
+      - Monitoring: facilitate incident impact measurement, track API usage, alerting, part of the on-call rotation.
       - Development: built a rating engine, refactored cluster management, various internal changes in services.
-      - DevOps: AWS migration, maintenance of on-demand test environments (e.g. dockerise services, debugging).
+      - DevOps: AWS and Docker migration, maintenance of on-demand test environments.
     ]
-  )
-)
-#exp(
-  "KTH",
-  "Stockholm, Sweden",
-  (
-    title: "Research Intern",
-    time: "February 2018 – June 2018",
-    details: []
-  )
-)
-#exp(
-  "KAIST",
-  "Daejeon, South-Korea",
-  (
-    title: "Research Intern",
-    time: "March 2017 – August 2017",
-    details: []
-  )
-)
-#exp(
-  "IRISA & INRIA",
-  "Rennes, France",
-  (
-    title: "Research Intern",
-    time: "May 2016 - July 2016",
-    details: []
   )
 )
 
@@ -158,7 +130,18 @@
   "Rennes, France",
   (
     title: "BSc & MSc in Computer Science, research track",
-    time: "2013 - 2018",
-    details: []
+    time: "2013 – 2018",
+    details: [
+      Research internships at: KTH (Stockholm, Sweden, Feb–Jun 2018); KAIST (Daejeon, South Korea, Mar–Aug 2017); IRISA & INRIA (Rennes, France, May–Jul 2016).
+    ]
   )
 )
+
+= Skills
+/ Languages: Rust, Python, Swift, Terraform
+/ Rust Libraries: Axum/Tower, RustCrypto, Cryptoki (PKCS\#11), uniffi, wasm-bindgen, Leptos, Sea-ORM, PyO3
+/ Application Platforms: Linux, Web, iOS, Android
+/ Tools: Grafana stack (Prometheus, Mimir, Loki, Tempo), Docker, Helm, FluxCD, GitHub Actions
+/ Orchestrators: Kubernetes (EKS with EC2 and Fargate), HashiCorp Nomad, Cloudflare Workers, ECS (Fargate)
+/ Cloud Providers: AWS, Cloudflare
+/ Standards: JOSE, OIDC, W3C Verifiable Credentials, OID4VC, ISO mDL, Sign-in with Ethereum
