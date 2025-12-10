@@ -2,10 +2,19 @@
   set document(author: author, title: author + " - Resume")
   set text(font: "Libertinus Serif", lang: "en", size: 10pt)
   set page(
-    footer: [
-      #set align(right)
-      #set text(6pt)
-      Last updated on #datetime.today().display("[month repr:long] [day], [year].")
+    footer: context [
+      #set align(center)
+      #if counter(page).final().at(0) > 1 {
+        counter(page).display(
+          "1/1",
+          both: true,
+        )
+      }
+      #if counter(page).get() == counter(page).final() {
+        set align(right)
+        set text(6pt)
+        [Last updated on #datetime.today().display("[month repr:long] [day], [year].")]
+      }
     ]
   )
 
@@ -75,11 +84,6 @@
   github: [#link("https://github.com/sbihel")[github.com/sbihel]],
 )
 
-= Expertise
-/ Rust: Four years of professional experience, including developing libraries, web services, and language bindings.
-/ Infrastructure: Experience working on internal infrastructure as well as working in customers' environments.
-/ Digital Identity: Four years of experience, including implementing standards and designing solutions.
-
 = Experience
 #exp(
   [#link("https://spruceid.com")[SpruceID]],
@@ -98,14 +102,16 @@
     title: "Software Engineer",
     time: "September 2020 – April 2022",
     details: [
-      - Joined as the second employee and worked on most projects over the years.
+      - Joined as the second employee.
+      - Bootstrapped most projects over the years and adapted as the company shifted focus from open-source web3 work to government professional services.
       - Projects highlights:
-         - #link("https://spruceid.com/customer-highlight/california-highlight")[California DMV mobile driver's licenses]: co-led a cross-functional team to implement end-to-end mDL issuance and presentment, with successful production deployment after 6 months.
-         - #link("https://login.xyz/")[Sign-in with Ethereum]: wrote an OIDC IdP, as well as writing libraries in Rust, JS, Python, Golang, etc.
+         - #link("https://spruceid.com/customer-highlight/california-highlight")[California DMV mobile driver's licenses]: co-led a cross-functional team to implement end-to-end mDL issuance and presentation, with successful production deployment after 6 months.
+         - #link("https://login.xyz/")[Sign-in with Ethereum]: wrote an OIDC IdP, as well as libraries in Rust, JS, Python, and Go.
          - Standards implementations: wrote open-source libraries for W3C Verifiable Credential, OID4VC, ISO mDL, as well as tooling such as CLIs and HTTP services, with hundreds of GitHub stars combined.
       - Development: worked on most libraries and services; mostly in Rust but also generated bindings for other languages, and worked on web and mobile apps.
-      - Infrastructure: designed and implemented the entire infrastructure stack, from provisioning to CI/CD and monitoring, achieving 99.99% uptime and SOC2 compliance.
+      - Infrastructure: set up the infrastructure from the ground up, from provisioning to CI/CD and monitoring, achieving 99.99% uptime and SOC2 compliance. Also worked in customers' environments for cloud-prem deployments.
       - Management: up to 7 direct reports, provided engineering guidance, translated ambiguous requests from internal stakeholders and customers into action items, interfaced with customers, helped with the product direction, and was part of the leadership team.
+      - Digital Identity: experience in implementing privacy-focused standards and designing solutions across domains, as well as managing enterprise systems.
     ]
   )
 )
@@ -132,7 +138,7 @@
     title: "BSc & MSc in Computer Science, research track",
     time: "2013 – 2018",
     details: [
-      Research internships at: KTH (Stockholm, Sweden, Feb–Jun 2018); KAIST (Daejeon, South Korea, Mar–Aug 2017); IRISA & INRIA (Rennes, France, May–Jul 2016).
+      Research internships at: KTH (Stockholm, 2018); KAIST (Daejeon, 2017); and IRISA & INRIA (Rennes, 2016).
     ]
   )
 )
@@ -141,7 +147,7 @@
 / Languages: Rust, Python, Swift, Terraform
 / Rust Libraries: Axum/Tower, RustCrypto, Cryptoki (PKCS\#11), uniffi, wasm-bindgen, Leptos, Sea-ORM, PyO3
 / Application Platforms: Linux, Web, iOS, Android
-/ Tools: Grafana stack (Prometheus, Mimir, Loki, Tempo), Docker, Helm, FluxCD, GitHub Actions
+/ Tools: Grafana stack (Prometheus, Mimir, Loki, Tempo), Docker, Helm, FluxCD, GitHub Actions, Karpenter
 / Orchestrators: Kubernetes (EKS with EC2 and Fargate), HashiCorp Nomad, Cloudflare Workers, ECS (Fargate)
 / Cloud Providers: AWS, Cloudflare
-/ Standards: JOSE, OIDC, W3C Verifiable Credentials, OID4VC, ISO mDL, Sign-in with Ethereum
+/ Standards: JOSE, OAuth2, OIDC, W3C Verifiable Credentials, OID4VC, ISO mDL, Sign-in with Ethereum
